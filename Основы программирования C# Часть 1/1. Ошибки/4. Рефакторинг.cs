@@ -12,7 +12,7 @@ namespace RefactorMe
         public static void Initialize(IGraphics newGraphics)
         {
             graphics = newGraphics;
-            //graphics.SmoothingMode = SmoothingMode.None;
+            graphics.SmoothingMode = SmoothingMode.None;
             graphics.Clear(Colors.Black);
         }
 
