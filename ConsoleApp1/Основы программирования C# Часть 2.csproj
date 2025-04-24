@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>Основы программирования C# Часть 2</RootNamespace>
+    <AssemblyName>Основы программирования C# Часть 2</AssemblyName>
   </PropertyGroup>
 
 </Project>
