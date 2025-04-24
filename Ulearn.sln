@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Основы программирования C# Часть 1", "Основы программирования C# Часть 1\Основы программирования C# Часть 1.csproj", "{6F18FB54-A7DC-4027-90A4-9B401AA2F8EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Основы программирования C# Часть 2", "ConsoleApp1\Основы программирования C# Часть 2.csproj", "{EEDE5901-488C-495F-84D6-0F6D24FB5F4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Основы программирования C# Часть 2", "Основы программирования C# Часть 2\Основы программирования C# Часть 2.csproj", "{EEDE5901-488C-495F-84D6-0F6D24FB5F4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
