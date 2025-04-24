@@ -6,12 +6,12 @@ namespace RoutePlanning
 {
     public static class PathFinderTask
     {
-        static double minLength = double.MaxValue;
+        private static double _minLength = double.MaxValue;
         public static int[] FindBestCheckpointsOrder(Point[] checkpoints)
         {
             var bestOrder = MakeTrivialPermutation(checkpoints,
                             new int[checkpoints.Length], new int[checkpoints.Length], 1, 0);
-            minLength = double.MaxValue;
+            _minLength = double.MaxValue;
             return bestOrder;
         }
 
@@ -20,8 +20,8 @@ namespace RoutePlanning
         {
             if (position == checkpoints.Length)
             {
-                if (path < minLength)
-                    minLength = path;
+                if (path < _minLength)
+                    _minLength = path;
                 return (int[])order.Clone();
             }
             for (int i = 1; i < order.Length; i++)
@@ -34,7 +34,7 @@ namespace RoutePlanning
                 var distance = PointExtensions.DistanceTo(checkpoints[order[position - 1]],
                                                           checkpoints[order[position]]);
                 path += distance;
-                if (path > minLength)
+                if (path > _minLength)
                     continue;
                 bestOrder = MakeTrivialPermutation(checkpoints, order, bestOrder, position + 1, path);
                 path -= distance;

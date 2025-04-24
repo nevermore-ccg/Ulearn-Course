@@ -33,16 +33,12 @@
             if (i + 1 < wordsList.Count)
             {
                 if (!countDictionary.ContainsKey(wordsList[i]))
-                {
                     countDictionary[wordsList[i]] = new Dictionary<string, int>
                             {
                                 { wordsList[i + 1], 1 }
                             };
-                }
                 else if (!countDictionary[wordsList[i]].ContainsKey(wordsList[i + 1]))
-                {
                     countDictionary[wordsList[i]][wordsList[i + 1]] = 1;
-                }
                 else
                     countDictionary[wordsList[i]][wordsList[i + 1]]++;
             }
@@ -54,16 +50,12 @@
             if (i + 2 < wordsList.Count)
             {
                 if (!countDictionary.ContainsKey($"{wordsList[i]} {wordsList[i + 1]}"))
-                {
                     countDictionary[$"{wordsList[i]} {wordsList[i + 1]}"] = new Dictionary<string, int>
                             {
                                 { wordsList[i + 2], 1 }
                             };
-                }
                 else if (!countDictionary[$"{wordsList[i]} {wordsList[i + 1]}"].ContainsKey(wordsList[i + 2]))
-                {
                     countDictionary[$"{wordsList[i]} {wordsList[i + 1]}"][wordsList[i + 2]] = 1;
-                }
                 else
                     countDictionary[$"{wordsList[i]} {wordsList[i + 1]}"][wordsList[i + 2]]++;
             }

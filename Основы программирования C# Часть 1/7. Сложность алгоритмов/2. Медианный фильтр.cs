@@ -14,11 +14,8 @@ namespace Recognizer
                 return original;
             var filteredPic = new double[lengthX, lengthY];
             for (int i = 0; i < lengthX; i++)
-            {
                 for (int j = 0; j < lengthY; j++)
-                {
                     if (lengthX != 1 && lengthY != 1)
-                    {
                         if ((i == 0 || i == lengthX - 1) && (j == 0 || j == lengthY - 1))
                             filteredPic[i, j] = FilterAngle(original, i, j, lengthX, lengthY);
                         else if (i - 1 < 0 || i + 1 == lengthX || j - 1 < 0 || j + 1 == lengthY)
@@ -27,34 +24,27 @@ namespace Recognizer
                             filteredPic[i, j] = FindMedian(original[i - 1, j - 1], original[i - 1, j], original[i - 1, j + 1],
                                 original[i, j - 1], original[i, j], original[i, j + 1],
                                 original[i + 1, j - 1], original[i + 1, j], original[i + 1, j + 1]);
-                    }
                     else
-                        filteredPic[i, j] = FilterLength1(original, i, j, lengthX, lengthY);
-                }
-            }
+                        filteredPic[i, j] = FilterLength(original, i, j, lengthX, lengthY);
             return filteredPic;
         }
 
-        public static double FilterLength1(double[,] original, int x, int y, int lengthX, int lengthY)
+        public static double FilterLength(double[,] original, int x, int y, int lengthX, int lengthY)
         {
             if (lengthX == 1)
-            {
                 if (y - 1 < 0)
                     return FindMedian(original[x, y], original[x, y + 1]);
                 else if (y + 1 == lengthY)
                     return FindMedian(original[x, y], original[x, y - 1]);
                 else
                     return FindMedian(original[x, y], original[x, y - 1], original[x, y + 1]);
-            }
             else
-            {
                 if (x - 1 < 0)
-                    return FindMedian(original[x, y], original[x + 1, y]);
-                else if (x + 1 == lengthY)
-                    return FindMedian(original[x, y], original[x - 1, y]);
-                else
-                    return FindMedian(original[x, y], original[x - 1, y], original[x + 1, y]);
-            }
+                return FindMedian(original[x, y], original[x + 1, y]);
+            else if (x + 1 == lengthY)
+                return FindMedian(original[x, y], original[x - 1, y]);
+            else
+                return FindMedian(original[x, y], original[x - 1, y], original[x + 1, y]);
         }
 
         public static double FilterBorder(double[,] original, int x, int y, int lengthX)

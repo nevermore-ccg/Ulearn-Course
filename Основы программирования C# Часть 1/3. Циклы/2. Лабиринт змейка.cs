@@ -30,9 +30,7 @@ namespace Mazes
         public static void MoveDown(Robot robot, int height)
         {
             for (int i = 0; i < 2 && robot.Y < height - 2; i++)
-            {
                 robot.MoveTo(Direction.Down);
-            }
         }
     }
 }

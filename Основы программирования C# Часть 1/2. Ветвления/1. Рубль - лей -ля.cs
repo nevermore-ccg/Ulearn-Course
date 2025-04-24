@@ -7,9 +7,7 @@
             string digit = Convert.ToString(count);
             int lastDigit = 0;
             if (digit.Length > 1)
-            {
                 lastDigit = Convert.ToInt32(digit.Substring(digit.Length - 2));
-            }
             // Напишите функцию склонения слова "рублей" в зависимости от предшествующего числительного count.
             if (count % 10 == 1 && lastDigit != 11)
                 return "рубль";
